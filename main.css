@@ -1,0 +1,78 @@
+body{
+    background-image: url(./black\ backgroung.jpg);
+}
+
+h1{
+    background-color: rgb(121, 112, 112);
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 7px;
+    border: 1px solid black;
+}
+
+#sort{
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+    border-radius: 7px;
+    box-shadow: white;
+    background-color:rgb(51, 48, 48) ;
+    color:white;
+    margin-left: 50px;
+
+}
+
+#filter{
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+    border-radius: 7px;
+    box-shadow: white;
+    background-color:rgb(51, 48, 48) ;
+    color:white;
+    margin-left: 550px;
+}
+
+table{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px;
+}
+
+tr{
+    padding-bottom: 30px;
+    font-family: 'Segoe UI';
+    /* column-gap: 10px; */
+    font-size: 1.5rem;
+    border: 10px solid rgb(228, 212, 212);
+    font-style:normal;
+}
+
+td{
+    padding: 10px;
+    font-family: 'Segoe UI';
+    font-size: 1.5rem;
+    border: 2px solid black;
+    font-style: normal;
+}
+
+td:hover{
+    background-color: rgba(73, 190, 79, 0.425);
+}
+
+tr:nth-child(even) {
+    background-color: rgb(255, 255, 255);
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(212, 203, 204);
+}

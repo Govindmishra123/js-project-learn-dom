@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="student.data.js">
+</head>
+
+<body>
+    <h1>Student's General Information</h1>
+    <select name="" id="filter">
+        <option value="">
+            All
+        </option>
+        <option value="8">
+            Class 8
+        </option>
+        <option value="9">
+            Class 9
+        </option>
+    </select>
+    <button id="sort" type="button">Sort By RollNo</button>
+    <table>
+        <thead>
+            <tr>
+                <th id="name">Name</th>
+                <th id="roll">Roll Number</th>
+                <th>Class</th>
+                <th>Address</th>
+                <th>DOB</th>
+                <th colspan="3">Marks</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+
+        </tbody>
+    </table>
+</body>
+<script src="student.data.js"></script>
+<script>
+    function addDataToHTML(students) {
+        let tbody = document.querySelector('#table-body');
+        tbody.innerHTML = "";
+        for (let data of students) {
+            let tableRow = document.createElement('tr');
+
+            let tableData = document.createElement('td');
+            tableData.innerText = data.name;
+            tableRow.append(tableData);
+
+
+            tableData = document.createElement('td');
+            tableData.innerText = data.rollNumber;
+            tableRow.append(tableData);
+
+
+
+            tableData = document.createElement('td');
+            tableData.innerText = data.class;
+            tableRow.append(tableData);
+
+
+            tableData = document.createElement('td');
+            tableData.innerText = data.address;
+            tableRow.append(tableData);
+
+
+            tableData = document.createElement('td');
+            tableData.innerText = data.dob;
+            tableRow.append(tableData);
+
+
+            tableData = document.createElement('td');
+            tableData.innerText = data.marks.maths;
+            tableRow.append(tableData);
+
+
+
+            tableData = document.createElement('td');
+            tableData.innerText = data.marks.engligh;
+            tableRow.append(tableData);
+
+
+            tableData = document.createElement('td');
+            tableData.innerText = data.marks.science;
+            tableRow.append(tableData);
+
+
+            tbody.append(tableRow);
+        }
+    }
+    let students=studentData;
+    addDataToHTML(students);
+
+    // drow down code
+    let dropDown = document.querySelector('#filter');
+    dropDown.addEventListener('change', filterByClass);
+
+    function filterByClass(event) {
+        let selectedValue = event.target.value;
+        if (selectedValue === "") {
+            // show all data
+            // remove filter and show all data
+            students = studentData
+        } else {
+            // show class 8 data
+            // use filter method in "studentData"
+            students = students.filter(function (data) {
+                return data.class == selectedValue
+            })
+
+        }
+        addDataToHTML(students);
+    }
+
+
+    // // sorting code
+    // let sorting = document.querySelector('#sort');
+    // // sorting.addEventListener('click', buttonClicked);
+
+    // function buttonClicked() {
+    //     studentData.sort(function (a, b) {
+    //         return a.rollNumber - b.rollNumber
+    //     });
+    //     addDataToHTML(studentData);
+    // }
+
+    let theading = document.querySelector('#name');
+    theading.addEventListener('click', buttonClicked);
+
+    function buttonClicked() {
+        students.sort(function (a, b) {
+            return a.rollNumber - b.rollNumber
+        });
+        addDataToHTML(studentData);
+    }
+
+
+</script>
+
+</html>
